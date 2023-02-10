@@ -1,6 +1,10 @@
 # 开源协议兼容性
 
+[![deploy](https://img.shields.io/github/deployments/Wybxc/OSLC/Production?label=deploy&style=for-the-badge)](https://oslc.wybxc.cc)
+
 这是一个查看各种开源协议之间兼容性的网站。
+
+地址：https://oslc.wybxc.cc
 
 ## 贡献
 
