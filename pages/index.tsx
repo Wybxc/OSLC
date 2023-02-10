@@ -19,7 +19,6 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { SkipNavContent, SkipNavLink } from '@chakra-ui/skip-nav';
-import { useEffect, useState } from 'react';
 
 import ColorModeSwitch from '@/components/ColorModeSwitch';
 import Footer from '@/components/Footer';
@@ -29,6 +28,7 @@ import { ImGithub } from 'react-icons/im';
 import Link from 'next/link';
 import { TbLicense } from 'react-icons/tb';
 import useFetch from '@/scripts/useFetch';
+import { useState } from 'react';
 
 const licenses = [
   '0BSD',
@@ -207,7 +207,7 @@ function Hero({ licenseA, setLicenseA, licenseB, setLicenseB }: HeroProps) {
           fontWeight="bold"
           wrap="wrap"
         >
-          <Text py="1">
+          <Box py="1">
             我想在
             <Select
               mx="2"
@@ -227,8 +227,8 @@ function Hero({ licenseA, setLicenseA, licenseB, setLicenseB }: HeroProps) {
               ))}
             </Select>
             的项目
-          </Text>
-          <Text py="1">
+          </Box>
+          <Box py="1">
             中使用
             <Select
               mx="2"
@@ -248,7 +248,7 @@ function Hero({ licenseA, setLicenseA, licenseB, setLicenseB }: HeroProps) {
               ))}
             </Select>
             的代码！
-          </Text>
+          </Box>
         </Flex>
       </Box>
     </>
