@@ -1,0 +1,37 @@
+{
+  "name": "oslc-website",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.4.9",
+    "@chakra-ui/skip-nav": "^2.0.15",
+    "@chakra-ui/system": "^2.3.8",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@next/font": "13.1.6",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "csv-parse": "^5.3.5",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "framer-motion": "^9.0.2",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-intersection-observer": "^9.4.2",
+    "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@next/bundle-analyzer": "^13.1.6"
+  }
+}
