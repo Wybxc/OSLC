@@ -1,11 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
 import fs from 'fs';
 import { parse } from 'csv-parse';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import path from 'path';
 
 interface CompatibilityData {
   licenses: string[];
@@ -29,12 +26,14 @@ export default async function compatibility(
       licenses: [],
       data: {},
     };
-    const parser = fs.createReadStream(`${__dirname}/compatibility.csv`).pipe(
-      parse({
-        delimiter: ',',
-        trim: true,
-      })
-    );
+    const parser = fs
+      .createReadStream(path.join(process.cwd(), 'compatibility.csv'))
+      .pipe(
+        parse({
+          delimiter: ',',
+          trim: true,
+        })
+      );
     for await (const record of parser) {
       if (record[0] === 'license') {
         compatibilityData.licenses = record.slice(1);
