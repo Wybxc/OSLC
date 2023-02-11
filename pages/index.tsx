@@ -26,6 +26,7 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import { ImGithub } from 'react-icons/im';
 import Link from 'next/link';
+import Spinner from '@/components/Spinner';
 import { TbLicense } from 'react-icons/tb';
 import useFetch from '@/scripts/useFetch';
 import { useState } from 'react';
@@ -268,7 +269,7 @@ function Compatibility({ licenseA, licenseB }: CompatibilityProps) {
     (data) => parseInt(data)
   );
 
-  if (compatibility === null) return <></>;
+  if (compatibility === null) return <Spinner />;
 
   if (compatibility === 0)
     return (
@@ -389,7 +390,7 @@ function CompatibilityFrom({ licenseA }: CompatibilityFrom) {
     `/api/compatibility?a=${encodeURIComponent(licenseA)}`
   );
 
-  if (compatibility === null) return <></>;
+  if (compatibility === null) return <Spinner />;
 
   const notCompatible = licenses.filter(
     (license) => compatibility[license] === '0'
@@ -447,7 +448,7 @@ function CompatibilityTo({ licenseB }: CompatibilityToProps) {
     `/api/compatibility?b=${encodeURIComponent(licenseB)}`
   );
 
-  if (compatibility === null) return <></>;
+  if (compatibility === null) return <Spinner />;
 
   const notCompatible = licenses.filter(
     (license) => compatibility[license] === '0'
